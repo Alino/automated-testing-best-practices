@@ -5,6 +5,9 @@ const BankDeposit = React.createClass({
     const branchNumber = parseInt(this.refs.branchNumber.value.trim());
     const amount = parseFloat(this.refs.amount.value.trim());
     Meteor.call('bank/depositCheck', fromAccountNumber, branchNumber, amount);
+    setTimeout(function(){
+      $('.bank-deposit__form').append("<p class='messageWorks'>it works!</p>");
+    }, 400);
   },
   render() {
     return (
